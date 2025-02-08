@@ -37,7 +37,7 @@ const Addtocard = () => {
                 className="flex items-center p-4 bg-white shadow-md rounded-lg transition-transform transform hover:scale-105"
               >
                 <img
-                  src={product.imgage}
+                  src={product.image}
                   className="h-28 w-24 object-cover rounded-lg shadow-md"
                   alt={product.heading}
                 />
@@ -47,7 +47,7 @@ const Addtocard = () => {
                 </div>
                 <button
                   onClick={() => handleProductDelete(index)}
-                  className="ml-6 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                  className="ml-6 bg-[#f4641a] text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
                 >
                   Delete
                 </button>

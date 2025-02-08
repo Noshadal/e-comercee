@@ -17,13 +17,13 @@ const Product = () => {
 
   // Calculate 10% discount
   const originalPrice = parseFloat(state.price);
-  const discountedPrice = (originalPrice * 0.9); 
+  const discountedPrice = (originalPrice * 0.9).toFixed(2); // 10% discount
 
   const handleAddToCart = () => {
     const product = {
       img: state.img,
       heading: state.heading,
-      price: discountedPrice, 
+      price: discountedPrice, // Store discounted price in cart
       vote: state.vote
     };
 
@@ -50,13 +50,17 @@ const Product = () => {
             <span className="text-gray-500 line-through ml-2">${originalPrice}</span>
             <span className="text-black font-bold ml-2">${discountedPrice}</span>
           </p>
+
+          {/* Rating & Review Count Section */}
           <div className="flex items-center text-[3vh] font-semibold mb-6">
-            Rating: {state.rate}
-            <IoStarSharp className='text-yellow-300' />
+            <span>Rating: {state.rating.rate}</span>
+            <IoStarSharp className='text-yellow-300 ml-2' />
             <IoStarSharp className='text-yellow-300' />
             <IoStarSharp className='text-yellow-300' />
             <IoStarSharp className='text-yellow-300' />
           </div>
+            <span className="ml-3 text-gray-600">({state.rating.count} reviews)</span>
+
           <div className="flex space-x-4">
             <button
               className="text-white font-semibold bg-black w-full mt-2 py-4 rounded-md"
